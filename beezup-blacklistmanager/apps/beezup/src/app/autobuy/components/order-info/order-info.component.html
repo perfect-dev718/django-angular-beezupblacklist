@@ -1,0 +1,113 @@
+<div class="product-info-container">
+  <div class="info-title">Order ID from MARKETPLACE</div>
+  <div class="product-info">
+    <div class="product-general-info">
+      <div class="info-title">General Informations: </div>
+      <div class="list-general">
+        <div class="list-general-item">
+          <label>ASIN:</label>
+          <span>{{autobuyStore.currentOrder.general.asin}}</span>
+        </div>
+        <div class="list-general-item">
+          <label>EAN:</label>
+          <span>{{autobuyStore.currentOrder.general.ean}}</span>
+        </div>
+        <div class="list-general-item">
+          <label>Amazon Price (if already bought):</label>
+          <span>{{autobuyStore.currentOrder.general?.amazon_price}}</span>
+        </div>
+        <div class="list-general-item">
+          <label>Marketplace Price:</label>
+          <span>{{autobuyStore.currentOrder.marketplace.marketplace_price}}</span>
+        </div>
+        <div class="list-general-item">
+          <label>Marketplace link:</label>
+          <span>{{autobuyStore.currentOrder.marketplace.marketplace_discussion.order_number}}</span>
+        </div>
+        <div class="list-general-item">
+          <label>Status:</label>
+          <span>{{autobuyStore.currentOrder.general.status}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="product-container-info">
+      <div class="product-marketplace-info">
+        <div class="info-title">Marketplace Informations: </div>
+        <div class="list-marketplace">
+          <div class="list-marketplace-item">
+            <label>TITLE:</label>
+            <span>{{autobuyStore.currentOrder.marketplace.marketplace_product_title}}</span>
+          </div>
+          <div class="list-marketplace-item">
+            <label>BRAND:</label>
+            <span>{{autobuyStore.currentOrder.marketplace.marketplace_product_brand}}</span>
+          </div>
+          <div class="list-marketplace-item">
+            <label>DESCRIPTION:</label>
+            <span>{{autobuyStore.currentOrder.marketplace?.marketplace_product_description}}</span>
+          </div>
+          <div class="list-general-item">
+            <label>IMAGE:</label>
+            <span>{{autobuyStore.currentOrder.marketplace.marketplace_product_main_image}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-keepa-info">
+        <div class="info-title">Keepa Informations: </div>
+        <div class="list-keepa">
+          <div class="list-keepa-item">
+            <label>TITLE:</label>
+            <span>{{autobuyStore.currentOrder.keepa.keepa_product_title}}</span>
+          </div>
+          <div class="list-keepa-item">
+            <label>BRAND:</label>
+            <span>{{autobuyStore.currentOrder.keepa.keepa_product_brand}}</span>
+          </div>
+          <div class="list-keepa-item">
+            <label>DESCRIPTION:</label>
+            <span>{{autobuyStore.currentOrder.keepa?.keepa_product_description}}</span>
+          </div>
+          <div class="list-keepa-item">
+            <label>IMAGE:</label>
+            <span>{{autobuyStore.currentOrder.keepa.keepa_product_main_image}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-chat">
+      <div class="product-chat-history">
+        <ul class="list-chat">
+          <li class="list-chat-item" *ngFor="let message of autobuyStore.currentOrder.marketplace.marketplace_discussion.messages">
+            <div class="message-item">
+              <label>Type:</label>
+              <span>{{message.senderType}}</span>
+            </div>
+            <div class="message-item">
+              <label>Name:</label>
+              <span>{{message.sender}}</span>
+            </div>
+            <div class="message-item">
+              <label>Date:</label>
+              <span>{{message.timestamp}}</span>
+            </div>
+            <div class="message-item">
+              <label>Content:</label>
+              <span>{{message.content}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="product-chat-action">
+        <div class="p-grid p-fluid">
+          <div class="p-col-12 p-md-4">
+            <div class="p-inputgroup">
+              <input type="text" pInputText placeholder="Enter your message....">
+              <button type="button" pButton pRipple label="Submit"></button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

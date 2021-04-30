@@ -1,0 +1,33 @@
+<div class="confirmation-modal-container">
+
+<!--  <div class="close-icon-container">-->
+<!--    <span class="modal-close-btn"-->
+<!--          (click)="closeModal()"></span>-->
+<!--  </div>-->
+
+  <div class="content-container">
+    <ng-container *ngIf="confModalContent; else defaultTemplate">
+      <ng-content></ng-content>
+    </ng-container>
+
+    <ng-template #defaultTemplate>
+      <h4>
+        {{modalData | translate}}
+      </h4>
+    </ng-template>
+
+  </div>
+
+  <div class="buttons-container trb-holder wide">
+    <button class="trb trb-lg trb-secondary-dark cap"
+            (click)="closeModal()">
+      {{buttonsText.decline | translate}}
+    </button>
+    <button class="trb trb-lg trb-outline-dark cap"
+            (click)="execCallback()">
+      {{buttonsText.apply | translate}}
+    </button>
+
+  </div>
+
+</div>

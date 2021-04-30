@@ -1,0 +1,315 @@
+@import "_colors";
+
+// ngPrime Tooltips
+
+.tr-tooltip {
+  &.no-wrap .ui-tooltip-text {
+    white-space: nowrap !important;
+  }
+
+  .ui-tooltip-arrow {
+    border-top-color: rgb(33, 112, 184) !important;
+  }
+}
+
+.node-status-tooltip {
+  .ui-tooltip-text {
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+}
+
+.arrow-right-tooltip {
+  .ui-tooltip-arrow {
+    border-left-color: #2170b8 !important;
+    border-top-color: transparent !important;
+    border-width: .25em 0 .25em .25em !important;
+    bottom: 0 !important;
+  }
+}
+
+.arrow-top-right-tooltip {
+  .ui-tooltip-arrow {
+    border-top-color: #2170b8 !important;
+    left: 94% !important;
+  }
+}
+
+.arrow-top-right-tooltip.tooltip-error {
+  .ui-tooltip-arrow {
+    border-top-color: $error-border !important;
+  }
+
+  .ui-tooltip-text {
+    border: 1px solid $error-border !important;
+  }
+}
+
+.arrow-right-tooltip.tooltip-error {
+  .ui-tooltip-arrow {
+    border-left-color: $error-border !important;
+  }
+
+  .ui-tooltip-text {
+    border: 1px solid $error-border !important;
+  }
+}
+
+.tr-tooltip.tooltip-long-width {
+  min-width: 240px;
+}
+
+.tr-tooltip.tooltip-width-300 {
+  min-width: 300px;
+}
+
+.tr-tooltip.tooltip-nowrap {
+  max-width: none !important;
+
+  .ui-tooltip-text {
+    white-space: nowrap;
+  }
+}
+
+.tr-tooltip.hide-arrow {
+  .ui-tooltip-arrow {
+    bottom: -6px !important;
+    display: none;
+  }
+}
+
+.tr-tooltip.tooltip-error {
+  .ui-tooltip-arrow {
+    border-top-color: $error-border !important;
+  }
+
+  .ui-tooltip-text {
+    border: 1px solid $error-border !important;
+  }
+}
+
+.ui-tooltip {
+  z-index: 99999 !important;
+
+  .ui-tooltip-text {
+    padding: 5px 10px !important;
+    border: solid 1px $tr-blue-btn;
+    border-radius: 3px;
+    background-color: $tr-tooltip-bg !important;
+    color: white;
+    font-size: 11px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+}
+
+.info-tips.ui-tooltip {
+  .ui-tooltip-text {
+    border: 1px solid $tr-tooltip-border-white;
+    background: $tr-tooltip-bg;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 100;
+    padding: 6px;
+  }
+
+  .ui-tooltip-arrow {
+    border-left-color: $tr-tooltip-border-white;
+
+    &:before {
+      content: '';
+      bottom: -3.5px;
+      left: 50%;
+      margin-left: -6px;
+      border: solid transparent;
+      border-left-color: $tr-tooltip-bg;
+      border-width: 4px 0px 3px 4px;
+      position: absolute;
+    }
+  }
+
+}
+
+.tooltip-arrow {
+  &:after {
+    border-width: 5px 6px 0;
+    border-top-color: #000;
+  }
+}
+
+// ngx bootstrap Tooltips
+
+.tooltip {
+  font-family: OpenSans-light !important;
+
+  .tooltip-inner {
+    font-weight: 100;
+    border: 1px solid $tr-tooltip-border-blue;
+    font-size: 14px;
+    max-width: none;
+    line-height: 20px;
+    min-height: 34px;
+    padding: 6px 5px 5px;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.input-tooltip .tooltip-inner {
+    white-space: normal;
+    line-height: initial;
+    max-width: 350px;
+  }
+
+  &.top .tooltip-arrow {
+    bottom: -2px;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px 8px 0;
+    border-top-color: $tr-tooltip-border-blue;
+
+    &:before {
+      content: '';
+      bottom: 2px;
+      left: 50%;
+      margin-left: -8px;
+      border: solid transparent;
+      border-top-color: $tr-tooltip-bg;
+      border-width: 8px 8px 0;
+      position: absolute;
+    }
+  }
+
+  &.white-border {
+
+    .tooltip-inner {
+      border-color: $tr-tooltip-border-white;
+    }
+
+    &.top .tooltip-arrow {
+      border-top-color: $tr-tooltip-border-white;
+    }
+  }
+}
+
+.about-content {
+  line-height: 19px;
+}
+
+.about-content-ic {
+  margin-top: 10px;
+}
+
+.sp-tooltip-top {
+  margin-top: -5px !important;
+
+  &:before {
+    bottom: -12px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: $tr-blue-btn;
+    border-width: 6px;
+    margin-left: -3px;
+  }
+
+  &:after {
+    bottom: -11px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: #1d2431;
+    border-width: 6px;
+    margin-left: -3px;
+  }
+
+  .tr-popup-text {
+    padding: 5px 10px !important;
+    border: solid 1px $tr-blue-btn;
+    border-radius: 3px;
+    background-color: $tr-tooltip-bg !important;
+    color: white;
+    font-size: 11px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+}
+
+.sp-tooltip-bottom {
+  margin-top: 7px !important;
+
+  &:before {
+    top: -12px;
+    left: calc(50% - 7px/2);
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: #2170b8;
+    border-width: 6px;
+    margin-left: -3px;
+    transform: rotate(180deg);
+  }
+
+  &:after {
+    top: -10px;
+    left: calc(50% - 7px/2);
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: #1d2431;
+    border-width: 6px;
+    margin-left: -3px;
+    transform: rotate(180deg);
+  }
+
+  .tr-popup-text {
+    padding: 5px 10px !important;
+    border: solid 1px $tr-blue-btn;
+    border-radius: 3px;
+    background-color: $tr-tooltip-bg !important;
+    color: white;
+    font-size: 11px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+}
+
+.stable-tooltip-arrow-center {
+  &:before {
+    left: calc(50% - 14px / 2);
+    bottom: -14px;
+    border: 7px solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: $tr-blue-btn;
+  }
+
+  :after {
+    left: calc(50% - 16px / 2);
+    bottom: -13px;
+    border: 8px solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: $tr-body-bg;
+  }
+}

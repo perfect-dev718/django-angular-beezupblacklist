@@ -1,0 +1,21 @@
+<div class="warning-wrapper">
+  <div class="col-sm-2 icon-container">
+    <i class="detach-icon yellow-attention-icon"></i>
+  </div>
+  <div class="col-sm-10 attention-text">
+    <i class="modal-close-btn clickable hovered" (click)="close()"></i>
+    <p translate class="warning-text">{{text}}</p>
+    <div class="buttons-container">
+      <button class="btn approve-btn"
+              (click)="execCallback()"
+              translate>
+        {{buttonsText?.apply ? buttonsText.apply : 'actions.yes'}}
+      </button>
+      <span class="discard-btn text-capitalize"
+            (click)="close()"
+            translate>
+        {{buttonsText?.decline ? buttonsText.decline : 'actions.no'}}
+      </span>
+    </div>
+  </div>
+</div>

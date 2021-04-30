@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="60px" height="60px" viewBox="0 0 60 60">
+<filter filterUnits="objectBoundingBox" x="-3.57" y="-3.57" width="107.14" height="107.14" id="filter0">
+<feImage x="2" y="2" width="56" height="56" preserveApectRatio="none" xlink:href="#symbol0"/>
+<feComposite in="grImage1" in2="SourceAlpha" operator="in" result="grOverlay1"/>
+<feBlend in="grOverlay1" in2="SourceGraphic" mode="normal" result="gradientOverlay1"/>
+</filter>
+<linearGradient id="linear_PSgrad_0" x1="50%" y1="100%" x2="50%" y2="0%">
+    <stop offset="0%" stop-color="rgb(33,111,183)" stop-opacity="1" />
+    <stop offset="100%" stop-color="rgb(47,179,167)" stop-opacity="1" />
+</linearGradient>
+
+<clipPath id="clip0"><path fillRule="evenodd" d="M-2 62C-2 62-2-2-2-2-2-2 62-2 62-2 62-2 62 62 62 62 62 62-2 62-2 62ZM 30 2C 14.54 2 2 14.54 2 30 2 45.46 14.54 58 30 58 45.46 58 58 45.46 58 30 58 14.54 45.46 2 30 2ZM 30 56C 15.64 56 4 44.36 4 30 4 15.64 15.64 4 30 4 44.36 4 56 15.64 56 30 56 44.36 44.36 56 30 56Z"/></clipPath><defs>
+<rect x="0" y="0" width="56" height="56" id="symbol0" fill="url(#linear_PSgrad_0)"/><symbol id="symbol1"><path fillRule="evenodd" d="M 30 58C 14.54 58 2 45.46 2 30 2 14.54 14.54 2 30 2 45.46 2 58 14.54 58 30 58 45.46 45.46 58 30 58ZM 30 4C 15.64 4 4 15.64 4 30 4 44.36 15.64 56 30 56 44.36 56 56 44.36 56 30 56 15.64 44.36 4 30 4Z"/></symbol></defs>
+<g><path fillRule="evenodd" d="M 30 58C 14.54 58 2 45.46 2 30 2 14.54 14.54 2 30 2 45.46 2 58 14.54 58 30 58 45.46 45.46 58 30 58ZM 30 4C 15.64 4 4 15.64 4 30 4 44.36 15.64 56 30 56 44.36 56 56 44.36 56 30 56 15.64 44.36 4 30 4Z" fill="rgb(0,0,0)" filter="url(#filter0)"/><use xlink:href="#symbol1" x="0" y="0" width="60" height="60" fill="none" stroke="rgb(29,35,49)" stroke-width="2.00px" clip-path="url(#clip0)"/></g></svg>

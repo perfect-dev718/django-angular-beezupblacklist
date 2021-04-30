@@ -1,0 +1,40 @@
+<div class="header-modal-container">
+
+  <div class="modal-header">
+    <div class="heading-area">
+      <strong class="title text-uppercase">
+        {{modalDialogStore?.modalTitle | translate}}
+      </strong>
+    </div>
+    <span class="modal-close-btn pull-right hovered clickable"
+          (click)="closeModal()"></span>
+  </div>
+
+  <div class="modal-body">
+    <ng-container *ngIf="headerModalContent; else defaultTemplate">
+      <ng-content></ng-content>
+    </ng-container>
+
+    <ng-template #defaultTemplate>
+      <h4>
+        {{modalDialogStore?.currentData | translate}}
+      </h4>
+    </ng-template>
+
+  </div>
+
+  <div class="modal-footer">
+    <div class="col-xs-12 text-right buttons-holder">
+      <button type="submit"
+              (click)="execCallback()"
+              [disabled]="disabledApplyBtn"
+              class="btn btn-form" translate>
+        {{modalDialogStore?.modalButtonsText?.apply}}
+      </button>
+      <a class="cancel-link text-uppercase" (click)="closeModal()" translate>
+        {{modalDialogStore?.modalButtonsText?.decline}}
+      </a>
+    </div>
+  </div>
+
+</div>

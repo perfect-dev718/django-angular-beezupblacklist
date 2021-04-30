@@ -1,0 +1,38 @@
+<div class="menu-wrapper">
+  <button class="menu-btn"
+          (click)="toggleMenu()"
+          pTooltip="Menu"
+          tooltipStyleClass="ic-tooltip"
+          tooltipPosition="right"><fa-icon [icon]="faBars"></fa-icon></button>
+  <ul class="menu-list">
+    <li *ngFor="let item of menu; let i = index">
+      <ng-container *ngIf="item?.url else logout">
+        <a  routerLinkActive="active"  [routerLink]="item?.url" >
+          <div (click)="selectItem(item, i)"
+               pTooltip="{{item?.name}}"
+               [tooltipDisabled]="showMenu"
+               tooltipStyleClass="ic-tooltip"
+               tooltipPosition="right">
+            <span class="panel-icon">
+              <fa-icon [icon]="item?.icon"></fa-icon>
+            </span>
+            <span class="item-name" [hidden]="!showMenu" >{{item?.name}}</span>
+          </div>
+        </a>
+      </ng-container>
+      <ng-template #logout>
+        <div (click)="selectItem(menu[menu.length-1])"
+             pTooltip="{{menu[menu.length-1]?.name}}"
+             [tooltipDisabled]="showMenu"
+             tooltipStyleClass="ic-tooltip"
+             tooltipPosition="right">
+            <span class="panel-icon">
+              <fa-icon [icon]="menu[menu.length-1]?.icon"></fa-icon>
+            </span>
+          <span class="item-name" [hidden]="!showMenu" >{{menu[menu.length-1]?.name}}</span>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+</div>
+

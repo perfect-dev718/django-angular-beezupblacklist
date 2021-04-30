@@ -1,0 +1,15 @@
+<p-dialog [(visible)]="display"
+          *ngIf="display"
+          modal="modal"
+          [styleClass]="currentDialog.class"
+          closable="true"
+          closeOnEscape="true"
+          [resizable]="false"
+          [draggable]="false"
+          [style]="{width: (currentDialog.width || defaultWidth) + 'px',
+                  height: currentDialog.height ?currentDialog.height + 'px': 'auto' }"
+          (onHide)="modalClosed()"
+          appendTo="body">
+
+    <ng-template class="wrapper-components stretch" [ngTemplateOutlet]="dialog"></ng-template>
+</p-dialog>

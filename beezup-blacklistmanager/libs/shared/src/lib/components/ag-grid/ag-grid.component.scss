@@ -1,0 +1,217 @@
+@import '_colors.scss';
+
+.ag-grid {
+
+  ::ng-deep {
+    .ag-root-wrapper {
+      padding: 0 20px 20px 20px;
+    }
+
+    .ag-floating-top {
+      background-color: white;
+    }
+
+    .ag-row {
+      background: white;
+      color: black;
+      border-bottom: 3px solid $tr-white-grid-bg;
+      line-height: 33px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+
+      &.ag-row-hover {
+        .transparent-content {
+          opacity: 1 !important;
+        }
+      }
+
+      .transparent-content {
+        opacity: 0.5;
+      }
+
+      border-bottom: 2px solid #3c526c !important;
+    }
+
+    .ag-header-select-all {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .ag-selection-checkbox {
+      margin-right: 20px;
+    }
+
+    .ag-header-cell-label {
+      padding: 0px 10px;
+    }
+
+    .ag-side-bar {
+      display: flex;
+      flex-direction: row-reverse;
+      box-sizing: border-box;
+      position: absolute;
+      right: 0;
+      top: 41px;
+      min-height: 680px;
+    }
+
+    .ag-side-buttons {
+      display: none;
+    }
+
+    .ag-tool-panel-wrapper {
+      width: 220px !important;
+    }
+
+    .ag-column-panel {
+      background-color: #1d2431 !important;
+      color: white;
+      overflow: visible;
+      width: 220px;
+      border: 1px solid #2170b8;
+      height: 95%;
+      position: absolute;
+      top: 0;
+      z-index: 999;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: 17px;
+        background: url(../../../../assets/images/common/sprite.png) no-repeat -320px -18px;
+        width: 13px;
+        height: 10px;
+      }
+
+      &:before {
+        font-family: OpenSans-light !important;
+        content: "Select which columns you would like to display";
+        height: 51px;
+        color: #ffffff;
+        text-align: left;
+        display: block;
+
+        overflow: hidden;
+        background: #21313f;
+        padding: 10px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        padding-left: 20px;
+
+      }
+
+      .ag-ltr .ag-column-select-column {
+        margin: 10px 22px;
+      }
+
+      .ag-column-drop-values,
+      .ag-column-drop-row-group,
+      .ag-pivot-mode {
+        display: none;
+
+        .ag-pivot-mode-select {
+          margin-left: 18px;
+        }
+      }
+
+      .ag-column-drop {
+        margin-left: 15px;
+      }
+
+      .ag-column-select-panel {
+        max-height: 200px;
+        overflow-y: auto;
+      }
+
+      .ag-column-drop .ag-column-drop-empty-message {
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+      }
+
+      .ag-icon-group {
+        background: url(../../../../assets/images/query-grid/row-groups.svg) no-repeat 50% 50%;
+      }
+    }
+
+    .ag-icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .ag-icon-checkbox-unchecked {
+      background: url(../../../../assets/images/query-grid/check-blue-empty.svg) no-repeat 50% 50%;
+      width: 18px;
+      height: 12px;
+    }
+
+    .ag-icon-checkbox-indeterminate {
+      background: url(../../../../assets/images/query-grid/check-blue-indeterminate.svg) no-repeat 50% 50%;
+      width: 18px;
+      height: 12px;
+    }
+
+    .ag-icon-checkbox-checked:empty {
+      background: url(../../../../assets/images/query-grid/check-blue-full.svg) no-repeat 50% 50%;
+      width: 18px;
+      height: 12px;
+    }
+
+    .ag-header-cell-label .ag-icon.ag-icon-menu {
+      background: url(../../../../assets/images/query-grid/sort-white-down.svg) no-repeat 50% 50%;
+      width: 18px;
+      height: 12px;
+    }
+
+    .ag-header-cell-label span.ag-icon-asc {
+      background: url(../../../../assets/images/query-grid/sort-white-up.svg) no-repeat 50% 50%;
+      width: 18px;
+      height: 12px;
+    }
+
+    .ag-header-cell-label span.ag-icon-desc {
+      background: url(../../../../assets/images/query-grid/sort-white-down.svg) no-repeat 50% 50%;
+      width: 18px;
+      height: 12px;
+    }
+
+    .ag-column-select-panel {
+      padding-left: 16px;
+
+      .ag-icon {
+        vertical-align: unset;
+        margin-right: 5px;
+      }
+
+      .ag-column-select-column {
+        margin-left: 16px;
+        margin-top: 7px;
+      }
+    }
+
+  }
+}
+
+.toggle-panel-action {
+  width: 20px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  z-index: 5;
+}
+
+.content-grid-container {
+  border-radius: 3px;
+  position: absolute;
+  height: 100%;
+  margin: 0 20px;
+  background: $tr-white-grid-bg;
+
+  &.dark-grid-container {
+    background: $tr-dark-grid-bg;
+  }
+}

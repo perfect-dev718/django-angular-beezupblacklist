@@ -1,0 +1,15 @@
+<p-toast
+  #toaster
+  styleClass="toaster">
+  <ng-template let-message pTemplate="message">
+    <div class="toaster-container"
+         (click)="closeToaster(message.id)">
+      <div class="ui-toast-icon">
+      </div>
+      <div class="ui-toast-message-text-content">
+        {{message.detail}}
+      </div>
+    </div>
+  </ng-template>
+</p-toast>
+

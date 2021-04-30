@@ -1,0 +1,15 @@
+<div class="table-title">Accountability - Autobuy Report</div>
+<ng-container *mobxAutorun>
+  <div class="table-wrapper full-height full-width">
+    <ag-grid-angular
+      #agGrid
+      style="width: 100%; height: 100%;"
+      class="ag-theme-balham"
+      [columnDefs]="columnDefs"
+      [gridOptions]="gridOptions"
+      [modules]="modules"
+      [rowModelType]="rowModelType"
+      (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+  </div>
+</ng-container>

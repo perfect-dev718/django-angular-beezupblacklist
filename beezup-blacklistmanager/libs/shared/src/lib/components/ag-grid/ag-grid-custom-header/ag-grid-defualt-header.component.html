@@ -1,0 +1,10 @@
+<div class="ag-grid-default-header" (click)="onSortRequested($event)">
+  <div class="customHeaderLabel">{{params.displayName}}</div>
+  <div class="sort-status" *ngIf="!noSort">
+    <span *ngIf="params.enableSorting && params.displayName" [ngClass]="{'active':ascSort}"
+          class="customSortDownLabel"></span>
+    <span *ngIf="params.enableSorting && params.displayName" [ngClass]="{'active':descSort}"
+          class="customSortUpLabel"></span>
+  </div>
+</div>
+

@@ -1,0 +1,217 @@
+$tr-green: #39b3a8;
+$tr-green-stronger: #21c364;
+$tr-blue: #0070b5;
+$tr-purple: #cc46f8;
+$tr-purple-lighter: #e366f6;
+$tr-light-blue: #559bdf;
+$tr-lighter-blue: #0996f4;
+$tr-gray-font: #a8aaad;
+$tr-dark-gray-font: #a3abb5;
+$tr-white-font: #ffffff;
+$tr-gray-bg: #c5c5c5;
+$tr-dark-blue-bg: #2e3f4e;
+$tr-gray-light-bg: #f4f4f4;
+$tr-body-bg: #1d2937;
+$tr-light-grey: rgba(243, 245, 246, 0.23);
+$tr-nav-bg: #20303e;
+$redError: #d73f3f;
+$row_text: #21313f;
+$inputError: #f45f5f;
+$borderError: #ff0000;
+$validationError: #e49495;
+$tr-input-bg: #1e2d3a;
+$tr-input-border: #d6d6d6;
+$fieldBG: #1e2d3a;
+$summary-bg: #171d27;
+$tr-blue-btn: #2170b8;
+$tr-white-btn: #ffffff;
+$tr-blue-btn-hover: #438ccc;
+$tr-blue-active-btn: #0f4e88;
+$tr-dark-blue: #204259;
+$slider-pointer: #196ba0;
+$tr-gray-scrollbar: #6e7982;
+$tr-blue-link: #066db3;
+$type-color: #5d637d;
+$tr-gray-dark: #35363b;
+$tr-gray-label: #b8bbbe;
+$tr-message-bg: #cbe0f6;
+$tr-modal-bg: #15212c;
+$tr-orange-border: #ea973e;
+$tr-light-orange-border: #E9A44F;
+$tr-light-orange: #FFF3E4;
+$tr-title-bg: #4f6480;
+$tr-cancel-bg: #f8cc46;
+$link-color: #a6d0f7;
+$tr-warning-modal-border: #e1a900;
+$tr-filtered-node: #FCE768;
+$loading-gray: #eee;
+$placeholder: #898989;
+$cancel-link: #d9d9d9;
+$new-cluster-border: #c2199d;
+$new-cluster-bg: #462441;
+$tool-panel-background: #e1ebf0;
+$tr-sidePanel-label: #A8AAAD;
+
+
+//ic-settings
+$section_bg: #3C526C;
+$section_bg_editable: #F2F2F2;
+$tooltip-icon-color: #A6D0F7;
+
+//list item
+$tr-dark-gray-bg: #303c4a;
+$gray-border: rgba(255, 255, 255, 0.15);
+$tr-bright-bg: #d9d9da;
+
+// tooltip
+$tr-tooltip-bg: #1d2431;
+$tr-tooltip-border-blue: $tr-blue;
+$tr-tooltip-border-white: #ffffff;
+$tr-tooltip-border-blue: #2170b8;
+
+// dropdown
+$tr-dropdown-header-bg: #21313f;
+$tr-dropdown-bg: #1d2431;
+$tr-dropdown-hover: #2170b8;
+$tr-dropdown-focus: #2170b8;
+$tr-dropdown-active: #0f4e88;
+$input-border: #b1b1b1;
+
+// severities
+$tr-severity-low: #43d881;
+$tr-severity-medium: #f29d20;
+$tr-severity-high: #ff3838;
+
+// grids
+$tr-white-grid-bg: #3c526c;
+$tr-histogram-bg: #e3e5e6;
+$tr-histogram-bin-hover: #2170b8;
+$tr-white-grid-selected: #e3e2cd;
+$tr-grid-row-odd: #fff;
+$tr-grid-row-even: #eceef1;
+$tr-metadata-grid-top-border: #7c5edd;
+
+// dark grid
+$tr-dark-grid-bg: #21313f;
+$tr-dark-grid-selected: $tr-blue;
+$tr-dark-grid-header-bg: $tr-blue-btn;
+$tr-dark-grid-row-odd: #2d3e4b;
+$tr-dark-grid-row-even: #364b5d;
+$tr-dark-grid-extend-row: #293948;
+$tr-dark-grid-extend-row-section: #2c3e4c;
+
+// data grid
+$active-grid-filter: #2ce982;
+$row-grid-border: #D8D8D8;
+
+// configuration center dashboard
+$ds-idle: #14202c;
+$ds-hover: #ffffff;
+$ds-active: #2f88d9;
+$ds-selected: #ffffff;
+$ds-selected-active: #ffffff;
+
+$vector-idle: $tr-green;
+$vector-hover: #ffffff;
+$vector-selected: #ffffff;
+$vector-disabled: #36618b;
+$vector-selected-disabled: #ffffff;
+
+$analysis-idle: $tr-purple;
+$analysis-hover: $tr-purple;
+$analysis-selected: #ffffff;
+$analysis-disabled: $tr-purple;
+$analysis-selected-disabled: $tr-purple;
+
+$publisher-color: #508DDA;
+$publisher-border: #5ABEEE;
+
+$family-size-bg: #0071b5;
+$blue-tag: #2170b8;
+$input-search-bg: #3f4550;
+
+// integrity-chart
+$integrity-bar-1: #fe3e3e;
+$integrity-bar-2: #2d95a5;
+$integrity-bar-3: #ccd0d3;
+
+// field or feature types
+$code: rgb(192, 80, 70);
+$measurement: rgb(165, 165, 165);
+$date-time: rgb(245, 157, 86);
+$identifier: rgb(157, 187, 97);
+$string: rgb(84, 139, 212);
+
+$success-border: #40cb7c;
+$error-border: #a12930;
+$warning-border: #c1930c;
+$error-text: #ff3737;
+$ic_title_border: #8DC9FF;
+
+// notification center
+$notification-number-bg: #43d881;
+$notification-number-border: #2a3440;
+$notification-number-font: #2a3440;
+$notification-number-failed-bg: #c00000;
+$notification-number-failed-border: #2a3440;
+$notification-number-failed-font: #fff;
+$status-failed-color: #c00000;
+$status-completed-color: #43d881;
+$status-in-progress-color: #43d881;
+$status-pending-color: #717988;
+$status-pending-bullet-color: #216baf;
+$filter-label: #a8abae;
+
+//status dots
+$status-inactive: #D9272A;
+$status-active: #29B33B;
+
+
+//user management
+$admin-form-label-color: #a8abae;
+$admin-form-input-border: #fff;
+$user-status-inactive: #eb2222;
+$user-status-active: #2bb33b;
+$user-table-names: #066db3;
+$user-table-data: #21313f;
+$tr-actions-user-management: #077eed;
+$tr-user-side-panel-inputs: #ffffff;
+$tr-show-hide-button: #a6d0f7;
+$tr-required-asterisk: #ff1200;
+$tr-select-arrow: #3291e8;
+$modal-detach-main-color: #ffffff;
+$filtered_btn: #dbdbdb;
+$tr-row-selected: #fbefb7;
+
+
+//empty-states
+$empty_state_table_title: #21313f;
+$empty_state_table_info_message: #8c9095;
+$empty_state_action: #0063c7;
+
+//inputs
+$gray_input_background: rgba(255, 255, 255, 0.15);
+$gray_input_color: #ffffff;
+
+// ic settings
+$main_background_color: #25354E;
+$field-order-number-bg: #6A69BF;
+$form-section-bg: #F2F2F2;
+$drag-placeholder-border: #979797;
+$table-header-separator: #C5C5C5;
+$blue-button-color: #0F76D7;
+$blue-button-hover-color: #327ABD;
+$blue-button-hover-shadow-color: rgba(0, 0, 0, 0.5);
+$row-hover-background: #DBE5EF;
+$row-hover-shadow: rgba(0, 0, 0, 0.5);
+$border-bottom-ic: #929292;
+$input-bg-ic: #F9F9F9;
+$white-table-header: #21313F;
+$text-button-text-color: #0F76C7;
+$text-button-show-hide-button: #a6d0f7;
+$table-drag-placeholder: #DBE5EF;
+$row-disable: #90989f;
+$accordion_background: #e9ebed;
+$accordion_text: #1b1d1f;
+$clickable-link: #0063C7;
+

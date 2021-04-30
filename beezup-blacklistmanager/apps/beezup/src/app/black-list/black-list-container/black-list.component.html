@@ -1,0 +1,69 @@
+<div class="blacklist-container">
+  <div class="p-panel-title blacklist-title">BLACKLIST MANAGER :</div>
+  <div class="add-blacklist-container">
+    <div class="p-col-12 p-md-4">
+      <div class="p-inputgroup">
+        <input type="text" pInputText placeholder="Add EAN or Asin to Blacklist..."
+               #refIdentifier
+               (ngModelChange)="isDuplicate($event, this.selectedMarketPlace)"
+               [ngModel]="currentBlackList">
+        <p-dropdown [options]="marketplaces" [(ngModel)]="selectedMarketPlace" (ngModelChange)="isDuplicate(currentBlackList,selectedMarketPlace)"></p-dropdown>
+        <button type="button" pButton pRipple label="Add"
+                [disabled]="showErrorDuplicate || !selectedMarketPlace || blackListStore?.isFinishedClearing"
+                (click)="addSingleToJson(refIdentifier.value, selectedMarketPlace)"></button>
+      </div>
+      <div [ngStyle]="{'color': 'red'}" *ngIf="showErrorDuplicate && currentBlackList?.length > 0">Already Exist</div>
+    </div>
+    <p-toast></p-toast>
+    <div class="card">
+      <h5>File Uploader</h5>
+      <div class="flex-row">
+        <p-fileUpload name="identifiers[]" (onSelect)="handleFileSelect($event)"
+                      [disabled]="blackListStore?.isFinishedClearing"
+                      #uploader
+                      mode="basic" accept=".csv" maxFileSize="10000000">
+        </p-fileUpload>
+        <button type="button" pButton pRipple label="Clear All"
+                [disabled]="blackListStore?.isFinishedClearing"
+                (click)="removeBlackListJson()"></button>
+      </div>
+
+    </div>
+    <div class="lazy-filter">
+      <input type="search" pInputText placeholder="Search by EAN or ASIN..."
+             [(ngModel)]="filterPayload"
+             (input)="lazyfilter($event.target.value)">
+    </div>
+    <p-dataView #dv [value]="blackListStore?.blackListValues" [paginator]="true" [rows]="50"
+                [loading]="blackListStore?.loading"
+                [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="blackListStore?.totalRecords"
+                filterBy="asin,ean,marketplace">
+      <p-header>
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+      </p-header>
+      <ng-template let-item pTemplate="listItem">
+        <div class="p-col-12 p-md-3 identifier">
+          {{item?.ean || item?.asin}} {{item?.marketplace ? '-- marketplace : ' + item?.marketplace : null}}
+          <button type="button" pButton label="Delete"
+                  [disabled]="blackListStore?.isFinishedClearing"
+                  (click)="removeBlackListJson(item)"></button>
+        </div>
+      </ng-template>
+      <ng-template let-item pTemplate="gridItem">
+        <div class="p-col-12 p-md-3 identifier">
+          {{item?.ean || item?.asin}}
+          <button type="button" pButton label="Delete"
+                  [disabled]="blackListStore?.isFinishedClearing"
+                  (click)="removeBlackListJson(item)"></button>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft" let-state>
+        {{state.first}}
+        <button type="button" pButton icon="pi-refresh"></button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+        <button type="button" pButton icon="pi-cloud-upload"></button>
+      </ng-template>
+    </p-dataView>
+</div>
+

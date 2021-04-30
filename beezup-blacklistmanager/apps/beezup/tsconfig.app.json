@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "types": ["node"]
+  },
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "src/test-setup.ts",
+    "**/*.spec.ts",
+    "**/*.mock.ts",
+    "./app/common/common-tests-modules.ts"
+  ]
+}

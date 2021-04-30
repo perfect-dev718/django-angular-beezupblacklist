@@ -1,0 +1,42 @@
+{
+  "npmScope": "beezup",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "beezup": {
+      "tags": []
+    },
+    "beezup-e2e": {
+      "tags": [],
+      "implicitDependencies": ["beezup"]
+    },
+    "shared": {
+      "tags": []
+    },
+    "shared-global-permissions": {
+      "tags": []
+    },
+    "shared-global-authentication": {
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "projects": {
+    "beezup": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/beezup",
+      "sourceRoot": "apps/beezup/src",
+      "prefix": "beezup",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/beezup",
+            "index": "apps/beezup/src/index.html",
+            "main": "apps/beezup/src/main.ts",
+            "polyfills": "apps/beezup/src/polyfills.ts",
+            "tsConfig": "apps/beezup/tsconfig.app.json",
+            "aot": false,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "apps/beezup/src/assets/stylesheets",
+                "apps/beezup/src/assets/images",
+                "apps/beezup/src/assets//i18n",
+                "apps/beezup/src/app/*"
+              ]
+            },
+            "assets": ["apps/beezup/src/assets",
+              "apps/beezup/src/favicon.ico",
+              "apps/beezup/src/manifest.json"],
+            "styles": [
+              "apps/beezup/src/styles.scss",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
+              "node_modules/ag-grid-community/dist/styles/ag-theme-balham.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "environments/environment.ts",
+                  "with": "environments/environment.prod.ts"
+                }
+              ],
+              "baseHref": "/",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "1mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "browserTarget": "beezup:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "beezup:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "beezup:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/beezup/tsconfig.app.json",
+              "apps/beezup/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/beezup/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/beezup/jest.config.js",
+            "tsConfig": "apps/beezup/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/beezup/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "beezup-e2e": {
+      "root": "apps/beezup-e2e",
+      "sourceRoot": "apps/beezup-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/beezup-e2e/cypress.json",
+            "tsConfig": "apps/beezup-e2e/tsconfig.e2e.json",
+            "devServerTarget": "beezup:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "beezup:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/beezup-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/beezup-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/tsconfig.lib.json",
+              "libs/shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/jest.config.js",
+            "tsConfig": "libs/shared/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-global-permissions": {
+      "projectType": "library",
+      "root": "libs/shared/global/permissions",
+      "sourceRoot": "libs/shared/global/permissions/src",
+      "prefix": "beezup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/global/permissions/tsconfig.lib.json",
+              "libs/shared/global/permissions/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/global/permissions/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/global/permissions/jest.config.js",
+            "tsConfig": "libs/shared/global/permissions/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/global/permissions/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-global-authentication": {
+      "projectType": "library",
+      "root": "libs/shared/global/authentication",
+      "sourceRoot": "libs/shared/global/authentication/src",
+      "prefix": "beezup",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/global/authentication/tsconfig.lib.json",
+              "libs/shared/global/authentication/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/global/authentication/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/global/authentication/jest.config.js",
+            "tsConfig": "libs/shared/global/authentication/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/global/authentication/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "beezup"
+}

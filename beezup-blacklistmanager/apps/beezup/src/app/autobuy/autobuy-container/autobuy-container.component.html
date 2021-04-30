@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+
+<ng-container *ngIf="currentDialog">
+  <tr-main-modal-dialog class="warning-wrapper"
+                        [ngSwitch]="currentDialog.component">
+    <ng-template>
+      <tr-confirmation-modal *ngSwitchCase="MODAL_DIALOG_NAMES.CONFIRM_MODAL.component">
+        <ng-container #confModalContent>
+          <div class="confirmation-modal">
+            <h4>
+              {{'warnings.confirm_title' | translate}}
+            </h4>
+            <div class="col-sm-10 attention-text">
+              <p class="warning-text">
+                {{'warnings.confirm_text' | translate}}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </tr-confirmation-modal>
+    </ng-template>
+
+  </tr-main-modal-dialog>
+</ng-container>

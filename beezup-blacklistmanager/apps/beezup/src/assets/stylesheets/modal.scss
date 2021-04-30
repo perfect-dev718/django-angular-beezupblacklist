@@ -1,0 +1,216 @@
+
+.ui-dialog {
+  background-color: #1d2937 !important;
+  border: solid 1px white;
+  border-radius: 5px;
+  z-index: 1021 !important;
+
+  .ui-dialog-titlebar {
+    display: none;
+  }
+
+  .ui-dialog-content {
+    height: 100%;
+  }
+}
+
+.ui-widget-overlay {
+  background-color: rgba(29, 37, 50, 0.9) !important;
+  opacity: 0.9 !important;
+}
+
+.ui-dialog.tr-modal {
+  background: #15212c;
+  border: solid 1px #2170b8;
+  border-radius: 3px;
+
+  .modal-header.thiner-header {
+    margin-bottom: 10px;
+    padding: 7px;
+  }
+
+  .ui-dialog-content {
+    overflow: visible !important;
+    padding: 0 !important;
+
+    .modal-body {
+      padding: 0;
+      color: white;
+
+      label {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 300;
+      }
+    }
+
+    .checkbox-input-wrapper {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .modal-header {
+    border: 1px solid #2170b8;
+    box-sizing: border-box;
+    background-color: #2170b8;
+  }
+
+  .modal-close-btn {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+  }
+
+  .icon-holder {
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  .heading-area {
+    border: none;
+    font-size: 22px;
+    font-family: OpenSans-Light;
+    display: inline-block;
+  }
+
+  .modal-header {
+    color: white;
+    border: none;
+  }
+
+  .buttons-holder {
+
+    .ui-widget button {
+      font-weight: 700;
+    }
+  }
+
+  .modal-footer {
+    padding: 0;
+    border: none;
+
+    .buttons-holder {
+      background-color: rgb(30, 45, 58);
+      border-top: #2b70b8 solid 1px;
+      height: 65px;
+      padding: 10px 0 0;
+
+      button {
+        &:hover {
+          border: 1px solid #1f89ce;
+          background: #1f89ce;
+          outline: 0 none;
+          color: #ffffff !important;
+        }
+      }
+
+      a {
+        color: white;
+        margin-right: 25px;
+        display: inline-block !important;
+        line-height: 33px !important;
+
+        &:hover {
+          color: lightgrey;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .ui-dialog-titlebar.ui-widget-header.ui-corner-top {
+    display: none;
+  }
+
+}
+
+.ui-dialog.tr-warning-modal {
+  border: 2px solid #c1930c;
+  height: auto !important;
+
+  .ui-dialog-content {
+    padding: 0 !important;
+  }
+
+  .warning-wrapper {
+    font-family: Open Sans;
+    position: relative;
+
+    .icon-container {
+      margin-top: 14px;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      right: 10px;
+    }
+
+    .yellow-attention-icon {
+      margin: 20px auto;
+    }
+
+    .attention-text {
+      border-left: 2px solid #e1a900;
+      color: #ffffff;
+      padding: 20px 20px 45px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      min-height: 180px;
+
+      p {
+        margin: 4px;
+        margin-bottom: 15px;
+        white-space: pre-line;
+      }
+    }
+
+    .buttons-container {
+      position: absolute;
+      bottom: 10px;
+
+      .btn {
+        padding: 5px 21px !important;
+      }
+
+      .approve-btn {
+        border-radius: 3px;
+        background-color: #4f5c68;
+        width: 103px;
+        height: 34px;
+        margin: 0;
+
+        &:hover, :active {
+          color: #ffffff;
+        }
+
+        &:focus {
+          color: #ffffff;
+        }
+      }
+
+      .discard-btn {
+        color: $modal-detach-main-color;
+        font-size: 14px;
+        width: 100px;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        left: 60px;
+      }
+    }
+  }
+}
+
+.ui-dialog.tr-confirmation-modal {
+  border-color: #2170B8;
+
+  .ui-dialog-content {
+    padding: 0 !important;
+  }
+}
+
+.ui-dialog-mask {
+  z-index: 1020 !important;
+}

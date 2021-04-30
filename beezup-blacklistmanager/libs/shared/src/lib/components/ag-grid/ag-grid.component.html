@@ -1,0 +1,33 @@
+<div class="data-view-ag-grid stretch">
+  <div class="content-grid-container stretch">
+    <div *ngIf="toolPanel" (click)="toggle()" class="toggle-panel-action hovered clickable">
+      <span class="setting-icon"></span>
+    </div>
+    <ag-grid-angular *ngIf="columnDefs"
+                     class="ag-grid"
+                     [rowData]="rowData"
+                     [columnDefs]="columnDefs"
+                     [gridOptions]="gridOptions"
+                     (gridReady)="onGridReady($event)"
+                     (columnResized)="columnResized($event)"
+                     (columnVisible)="onColumnVisible ? onColumnVisible($event) : null"
+                     (cellKeyDown)="cellKeyDown($event)"
+                     [suppressContextMenu]="true"
+                     [rowSelection]="rowSelection || 'multiple'"
+                     (selectionChanged)="onSelectionChanged ? onSelectionChanged($event) : null"
+                     [isFullWidthCell]="isFullWidthCell"
+                     [getRowHeight]="getRowHeight"
+                     [ngStyle]="{'height':tableHeight || '100%', 'width': tableWidth || '100%'}"
+                     [getNodeChildDetails]="getNodeChildDetails"
+                     [suppressRowClickSelection]="!isNil(suppressRowClickSelection) ? suppressRowClickSelection : true"
+                     [suppressFieldDotNotation]="!isNil(suppressFieldDotNotation) ? suppressFieldDotNotation : true"
+                     [suppressClipboardPaste]="true"
+                     [suppressMenuHide]="suppressMenuHide || false"
+                     (sortChanged)="indicateSorting()"
+                     [enableServerSideSorting]="backendSorting"
+                     [frameworkComponents]="frameworkComponents ? frameworkComponents : {}"
+                     [fullWidthCellRendererFramework]="getFullWidthCellRenderer()">
+    </ag-grid-angular>
+
+  </div>
+</div>

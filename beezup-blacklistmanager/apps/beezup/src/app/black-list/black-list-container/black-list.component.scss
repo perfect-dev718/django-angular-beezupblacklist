@@ -1,0 +1,53 @@
+beezup-black-list {
+  width: 100%;
+  background: white;
+  .blacklist-container {
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 100%;
+
+    .identifier {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      justify-content: space-between;
+    }
+
+    .blacklist-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+
+    p-dataView {
+      .p-dataview-content {
+        overflow: auto;
+        height: calc(100vh - 380px);
+      }
+      p-header {
+        display: flex;
+        justify-content: space-between;
+        .p-inputtext {
+          width: 200px;
+        }
+      }
+    }
+
+    .flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .lazy-filter {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+}
+

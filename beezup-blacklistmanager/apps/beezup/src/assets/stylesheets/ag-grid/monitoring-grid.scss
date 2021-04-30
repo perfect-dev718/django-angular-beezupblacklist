@@ -1,0 +1,306 @@
+@import '_colors.scss';
+@import "mixin";
+
+@mixin grid-status($url:'') {
+  background: url($url) no-repeat;
+  height: 18px;
+  display: inline-block;
+  margin-top: 37%;
+  width: 20px;
+  margin-left: 4px;
+}
+
+@mixin grid-historical($url:'') {
+  background: url($url) no-repeat;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+}
+
+.monitoring-tooltip {
+  width: 120px;
+
+  .tooltip-arrow {
+    border-bottom-color: $tr-blue !important;
+  }
+  ul {
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+
+    li {
+      display: block;
+      width: 42px;
+      padding-top: 5px;
+    }
+  }
+
+}
+
+.grid-status-COMPLETED {
+  background-color: $tr-green-stronger;
+  height: 100%;
+  text-align: center;
+  .status-icon {
+    @include grid-status('../images/grid-statuses/current-steps-status-table-completed.svg')
+  }
+}
+
+.monitoring-center {
+
+  .breadcrumbs-area h1 {
+    margin-top: 30px;
+  }
+
+  .chains-holder {
+    display: inline-block;
+    border-right: 1px solid #8b939e;
+    width: 21%;
+    padding: 18px;
+    border-right: 1px solid $gray-border;
+
+    .actions-holder {
+      margin-top: 23px;
+    }
+  }
+
+  .grid-status-RUNNING {
+    background-color: $tr-purple-lighter;
+    height: 100%;
+    text-align: center;
+    .status-icon {
+      @include grid-status('../images/grid-statuses/current-steps-status-table-running.svg');
+    }
+  }
+
+  .grid-status-PENDING {
+    background-color: black;
+    height: 100%;
+    text-align: center;
+    .status-icon {
+      @include grid-status('../images/grid-statuses/current-steps-status-table-pending.svg')
+    }
+  }
+
+  .grid-status-CANCELED {
+    background-color: $tr-cancel-bg;
+    height: 100%;
+    text-align: center;
+    .status-icon {
+      background: url('../../images/grid-statuses/current-steps-status-table-canceled.svg') no-repeat;
+      height: 20px;
+      display: inline-block;
+      margin-top: 44%;
+      width: 14px;
+      margin-left: 4px;
+    }
+  }
+  .historical-icon-CANCELED {
+    @include grid-historical('../images/grid-statuses/historical-table-canceled.svg')
+  }
+
+  .grid-status-ABORTED {
+    background-color: $tr-cancel-bg;
+    height: 100%;
+    text-align: center;
+    .status-icon {
+      background: url('../../images/grid-statuses/current-steps-status-table-canceled.svg') no-repeat;
+      height: 20px;
+      display: inline-block;
+      margin-top: 44%;
+      width: 14px;
+      margin-left: 4px;
+    }
+  }
+
+  .historical-icon-ABORTED {
+    @include grid-historical('../images/grid-statuses/historical-table-aborted.svg')
+  }
+
+  .grid-status-FAILED {
+    background-color: red;
+    height: 100%;
+    text-align: center;
+    .status-icon {
+      @include grid-status('../images/grid-statuses/current-steps-status-table-failed.svg')
+    }
+  }
+  .historical-icon-FAILED {
+    @include grid-historical('../images/grid-statuses/historical-table-failed.svg')
+  }
+
+  .historical-icon-PENDING {
+    @include grid-historical('../images/chains-statues/chain-run-status-pending.svg')
+  }
+
+  .historical-icon-RUNNING {
+    @include grid-historical('../images/chains-statues/chain-run-status-running.svg')
+  }
+
+  .historical-icon-COMPLETED {
+    @include grid-historical('../images/grid-statuses/historical-table-completed.svg')
+  }
+
+  .historical-icon-ROLLEDBACK {
+    @include grid-historical('../images/chains-statues/chain-run-status-rolled-back-table.svg')
+  }
+
+  .historical {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  //chain details
+
+  .chain-details-holder {
+    display: inline-block;
+    width: 77%;
+    height: 100%;
+    vertical-align: top;
+    position: relative;
+
+    .step-number {
+      font-size: 14px;
+    }
+
+    .chain-details-tabs {
+      list-style: none;
+      border-bottom: 1px solid rgba(74, 91, 112, 0.6);
+      -webkit-padding-start: 0;
+      -moz-padding-start: 0;
+
+      li {
+        display: inline-block;
+        text-transform: uppercase;
+        margin-right: 70px;
+        color: $tr-gray-label;
+        padding-bottom: 9px;
+        margin-bottom: -1px;
+        cursor: pointer;
+
+        &.active {
+          color: white;
+          border-bottom: 1px solid $tr-blue;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    //.overflow-child-view {
+    //  position: relative;
+    //  border-top: 3px solid $tr-orange-border;
+    //  border-radius: 4px;
+    //  overflow: hidden;
+    //  background: $tr-white-grid-bg;
+    //  margin-top: 24px;
+    //  height: 71%;
+    //  margin-bottom: 20px;
+    //}
+  }
+
+  .step-icon {
+    background: url('../../images/side-panel/step-side-panel.svg') no-repeat;
+    width: 17px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  .grid-details {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+
+  }
+
+  .statistics {
+    margin-top: 30px;
+  }
+
+  //.no-statistics-available {
+  //  background: url(../../images/common/no-statistics-available.png) no-repeat;
+  //  height: 155px;
+  //  width: 59%;
+  //  margin: 27px auto;
+  //}
+
+  .no-static-message {
+    text-align: center;
+  }
+
+  //.avgs-container {
+  //  margin-top: 20px;
+  //  display: flex;
+  //  justify-content: space-around;
+  //  .avg-item {
+  //    text-align: center;
+  //    margin: 0 auto;
+  //    .avg-value {
+  //      font-size: 22px;
+  //    }
+  //    .avg-label {
+  //      color: $tr-dark-gray-font;
+  //      font-size: 14px;
+  //    }
+  //
+  //  }
+  //}
+  //.kpi-actions {
+  //  display: flex;
+  //  padding-top: 21px;
+  //  justify-content: space-between;
+  //  .tr-dropdown {
+  //    width: 13vh!important;
+  //    height: 31px;
+  //    .dropdown-menu {
+  //      width: 13vh;
+  //      min-width: 13vh;
+  //    }
+  //  }
+  //  tr-radio-actions {
+  //    padding-bottom: 5px;
+  //    .radio-action {
+  //      height: 29px;
+  //      line-height: 28px;
+  //      width: 50%;
+  //      min-width: 50%;
+  //    }
+  //  }
+  //}
+  .ag-header-cell {
+    text-align: left !important;
+  }
+}
+
+.grid-status-COMPLETED {
+  background-color: #419c50;
+  height: 100%;
+}
+
+//.data-view-ag-grid .content-grid-container .ag-row{
+//  border-radius: 5px !important;
+//}
+
+.data-view-ag-grid .content-grid-container .ag-grid .ag-cell:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.ag-cell {
+  text-align: left !important;
+}
+
+.ag-cell:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0;
+}
+

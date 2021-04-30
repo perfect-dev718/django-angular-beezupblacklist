@@ -1,0 +1,426 @@
+/* This files overwrites bootstrap buttons styles */
+
+/* general colors */
+$color-text: #21313F;
+$color-primary: #0F76D7;
+$color-primary-link: #0063c7;
+$color-primary-highlighted: #438ccc;
+$color-primary-light: #0F76D7;
+$color-primary-light-highlighted: #1E86E8;
+
+$color-dark: #4f5c68;
+$color-white: #ffffff;
+$color-grey: #a8aaad;
+$color-success: #2B8B46;
+$color-danger: #FF0000;
+$btn-color-disabled: #334E65;
+$btn-bg-color-hover: #E7F1FB;
+$link-color: #b2d3de;
+
+//custom btn colors
+$tl-btn-bg-color-grey: #E9E9EA;
+$color-icon-hover: #2B4F67;
+
+//outline grey
+$tl-btn-bg-color-outline: transparent;
+$tl-btn-bg-color-outline-hover: #ECECEC;
+$tl-btn-bg-color-outline-active: #334E65;
+$tl-btn-border-color-outline: #D1CFCF;
+
+$tl-btn-color-outline: #C9C9C9;
+
+//$tl-btn-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 4px 7px rgba(0,0,0,0.2);
+$tl-btn-shadow: 0 2px 9px 0 rgba(0,0,0,.35);
+
+
+//sizes
+$xs-size: 24px;
+$xs-font-size: 14px;
+
+$sm-size: 28px;
+$sm-font-size: 14px;
+
+$md-size: 32px;
+$md-font-size: 14px;
+
+$lg-size: 34px;
+$lg-font-size: 16px;
+
+.up {
+  text-transform: uppercase;
+}
+.cap {
+  text-transform: capitalize;
+}
+
+.trb-holder {
+  display: flex;
+  &.align-right {
+    justify-content: flex-end;
+  }
+  .pull-right {
+    margin-left: auto !important;
+  }
+  > * {
+    display: inline-block;
+    margin-left: 12px;
+    &:first-child {
+      margin-left: 0 !important;
+    }
+  }
+  &.menu > * {
+    margin-left: 8px;
+  }
+  &.narrow > * {
+    margin-left: 6px;
+  }
+  &.wide > * {
+    margin-left: 18px;
+  }
+}
+
+.trb-link {
+  background: none;
+  border: none;
+  outline: none;
+  i {
+    margin-left: 8px;
+  }
+  span {
+    cursor: pointer;
+  }
+  &:hover, &.active {
+    text-decoration: none;
+    > span {
+      text-decoration: underline;
+    }
+  }
+  &:not(.lt) {
+    color: $link-color;
+    &:hover, &:focus, &.active {
+      color: white;
+    }
+  }
+  &.lt {
+    color: $color-primary;
+    i.tri-info {
+      color: $color-grey;
+      font-size: 20px;
+      display: inline-block;
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+}
+
+.trb {
+  font-size: $md-font-size;
+  height: $md-size;
+  font-weight: lighter;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 16px;
+  border: none;
+  background: none;
+  color: $color-primary-link;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  border-radius: 2px;
+  white-space: nowrap;
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    //pointer-events: none;
+  }
+
+  &.np {
+    padding: 0 !important;
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
+  &-link {
+    padding: 0;
+    background: transparent;
+    color: $link-color;
+  }
+
+  //icon and text
+  .tri {
+    display: inline-block;
+    margin-right: 8px;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  //icon only
+  &-icon {
+    padding: 0 !important;
+    width: $md-size;
+    .tri {
+      margin-right: 0 !important;
+    }
+  }
+
+  //inner icon
+  .icon {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+
+  //general for LIGHT THEME
+  &.lt {
+    &:not(.trb-secondary) {
+      &:hover, &:focus, .active {
+        box-shadow: $tl-btn-shadow;
+      }
+    }
+  }
+
+  //colors
+  &-primary {
+    color: white;
+    background-color: $color-primary;
+    &:hover, &:focus, &.active {
+      background-color: $color-primary-highlighted;
+    }
+    &.lt {
+
+    }
+  }
+
+  &-white {
+    color: $color-primary;
+    background-color: white;
+    &:hover, &:focus, .active {
+      background-color: $btn-bg-color-hover;
+    }
+
+    &.lt {
+      &:hover, &:focus, .active {
+        background-color: white;
+      }
+    }
+  }
+
+  &-grey {
+    &.lt {
+      color: $color-text;
+      background-color: $tl-btn-bg-color-grey;
+      border: 1px solid $tl-btn-border-color-outline;
+
+      &:hover, &:focus, &.active {
+        background-color: $tl-btn-bg-color-grey;
+      }
+    }
+  }
+
+  &-success {
+    color: $color-success;
+    background-color: white;
+    &[disabled]{
+      color: $btn-color-disabled;
+    }
+    &:hover, &:focus, .active {
+      background-color: $btn-bg-color-hover;
+    }
+    &.lt {
+      border: 1px solid $tl-btn-color-outline;
+      &:hover, &:focus, &.active {
+        border-color: $color-success;
+      }
+    }
+  }
+  &-danger {
+    color: $color-danger;
+    background-color: white;
+    &:hover, &:focus, .active {
+      background-color: $btn-bg-color-hover;
+    }
+    &.lt {
+      border: 1px solid $tl-btn-color-outline;
+      &:hover, &:focus, &.active {
+        border-color: $color-danger;
+      }
+    }
+  }
+
+  //additional styles
+  &-secondary {
+    color: white;
+
+    &:not([disabled]){
+      &:hover, .active {
+        >  span {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.lt {
+      color: $color-primary-link;
+    }
+  }
+
+
+  &-flat {
+    &:hover, &:focus, &.active {
+      color: $color-icon-hover;
+    }
+  }
+
+  &-flat-grey {
+    color: $color-dark;
+    &:hover, &:focus, &.active {
+      color: $color-primary;
+    }
+  }
+
+  &-outline {
+    &-primary:not(.lt) {
+      background-color: $color-primary;
+      border: 1px solid white;
+      color: white;
+      &:hover, &:focus, .active {
+        background-color: $color-primary-light-highlighted;
+      }
+    }
+    &-primary.lt {
+      background-color: transparent;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+      &:hover, &:focus, .active {
+        background-color: white;
+      }
+    }
+    &-white:not(.lt) {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      &:hover, &:focus, .active {
+        background-color: $color-dark;
+      }
+    }
+    &-white.lt {
+      background-color: white;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+    }
+    &-dark {
+      background-color: $color-dark;
+      color: white;
+      border: 1px solid $color-primary;
+    }
+
+
+    &-grey.lt {
+      background-color: transparent;
+      color: $color-text;
+      border: 1px solid $tl-btn-border-color-outline;
+      &:hover {
+        color: $color-text;
+        background-color: $tl-btn-bg-color-outline-hover;
+      }
+      &:focus, &.active {
+        color: white;
+        background-color: $tl-btn-bg-color-outline-active;
+      }
+    }
+  }
+
+  &.trb-actions {
+    border: 1px solid $color-primary;
+    background-color: transparent;
+    color: white;
+    &:hover, &:focus, &.active {
+      border-color: $color-primary-highlighted;
+      background-color: $color-primary-highlighted;
+    }
+  }
+
+  //sizes
+  &-xs {
+    font-size: $xs-font-size;
+    height: $xs-size;
+    padding: 0 10px;
+    &.trb-icon {
+      width: $xs-size;
+      //font-size: 16px;
+    }
+    .tri { margin-right: 6px; }
+  }
+
+  &-sm {
+    font-size: $sm-font-size;
+    height: $sm-size;
+    padding: 0 10px;
+    &.wide {
+      padding: 0 20px;
+    }
+    &.trb-icon {
+      width: $sm-size;
+      //font-size: 16px;
+    }
+    .tri { margin-right: 7px; }
+  }
+
+  &-lg {
+    font-size: $lg-font-size;
+    height: $lg-size;
+    padding: 0 24px;
+    &.trb-icon { width: $lg-size; }
+    .tri { margin-right: 8px; }
+  }
+}
+
+.circle-btn {
+  background-color: $color-primary;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &:hover {
+    background-color: $color-primary-highlighted;
+    box-shadow: $tl-btn-shadow;
+  }
+  i {
+    vertical-align: middle;
+  }
+  &-md {
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 24px;
+    i {
+      line-height: 24px;
+    }
+  }
+  &-lg {
+    width: 78px;
+    height: 78px;
+    line-height: 78px;
+    font-size: 30px;
+    i {
+      line-height: 30px;
+    }
+  }
+}

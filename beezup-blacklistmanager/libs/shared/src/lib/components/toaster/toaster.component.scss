@@ -1,0 +1,133 @@
+@import '../../../../../../apps/beezup/src/assets/stylesheets/colors';
+
+::ng-deep .toaster {
+  width: 500px;
+
+  &:first-child {
+    margin-top: 3%;
+  }
+
+  .ui-toast-message {
+    height: 100%;
+    opacity: 1;
+    background-color: $summary-bg;
+
+    .ui-toast-message-content {
+      padding: 0;
+      height: 100%;
+
+      .ui-toast-close-icon {
+        top: 7px;
+        right: 10px;
+        width: 14px;
+        height: 14px;
+        color: #21313f;
+
+        &::before {
+          content: '';
+          background: url("../../../../../../apps/beezup/src/assets/images/common/close.png") no-repeat;
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+          background-size: 90%;
+          margin-left: 2px;
+          margin-bottom: 1px;
+        }
+
+        &:hover, .active {
+          background: #21313f;
+          border-radius: 50%;
+
+          &::before {
+            filter: brightness(50%);
+          }
+        }
+      }
+
+      .toaster-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .ui-toast-message-text-content {
+          min-height: 100px;
+          padding: 5px 15px;
+          display: flex;
+          align-items: center;
+          justify-content: left;
+          color: #ffffff;
+          font-size: 14px;
+          cursor: pointer;
+          margin-left: 50px;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          word-break: break-word;
+          -ms-hyphens: auto;
+          -moz-hyphens: auto;
+          -webkit-hyphens: auto;
+          hyphens: auto;
+        }
+      }
+
+      .ui-toast-icon {
+        top: 1.2em;
+
+        &::before {
+          content: '';
+          display: inline-block;
+        }
+      }
+    }
+
+    &.ui-toast-message-success {
+      border: 2px solid $success-border;
+
+      .ui-toast-icon {
+        width: 22px;
+        height: 17px;
+        top: unset;
+        left: 17px;
+        background: url("../../../../../../apps/beezup/src/assets/images/common/success.png") no-repeat;
+      }
+
+      .ui-toast-message-text-content {
+        border-left: 2px solid $success-border !important;
+      }
+    }
+
+    &.ui-toast-message-error {
+      border: 2px solid #a12930;
+
+      .ui-toast-icon {
+        width: 22px;
+        height: 17px;
+        top: unset;
+        left: 15px;
+        background: url("../../../../../../apps/beezup/src/assets/images/common/error.png") no-repeat;
+      }
+
+      .ui-toast-message-text-content {
+        white-space: pre-line;
+        border-left: 2px solid #a12930 !important;
+      }
+    }
+
+
+    &.ui-toast-message-warn {
+      border: 2px solid #FC8527;
+
+      .ui-toast-icon {
+        left: 15px;
+        top: unset;
+        width: 26px;
+        height: 22px;
+        background: url("../../../../../../apps/beezup/src/assets/images/icons/warning-icon.svg") no-repeat;
+      }
+
+      .ui-toast-message-text-content {
+        border-left: 2px solid #FC8527 !important;
+      }
+    }
+
+  }
+}

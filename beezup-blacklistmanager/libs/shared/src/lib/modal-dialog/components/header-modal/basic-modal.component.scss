@@ -1,0 +1,64 @@
+@import '../../../../../../../apps/beezup/src/assets/stylesheets/colors';
+
+.header-modal-container {
+  height: 100%;
+
+  .modal-header {
+    background-color: #2170B8;
+    color: white;
+    border: none;
+    height: 73px;
+
+    .heading-area {
+      border: none;
+      font-size: 22px;
+      font-family: OpenSans-Light;
+      display: inline-block;
+    }
+
+    .modal-close-btn {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  .modal-body {
+    padding: 30px 15px;
+    height: calc(100% - 73px - 66px);
+  }
+
+  .modal-footer {
+    height: 66px;
+
+    .buttons-holder {
+      background-color: rgb(30, 45, 58);
+      border-top: #0aa2f8 solid 2px;
+      padding: 0;
+      padding-top: 10px;
+
+      button {
+        background: #0F76D7;
+
+        &:hover {
+          border: 1px solid #1f89ce;
+          background: #1f89ce;
+          outline: 0 none;
+          color: #ffffff !important;
+        }
+      }
+
+      a {
+        color: white;
+        margin-right: 25px;
+        display: inline-block !important;
+        line-height: 33px !important;
+
+        &:hover {
+          color: lightgrey !important;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

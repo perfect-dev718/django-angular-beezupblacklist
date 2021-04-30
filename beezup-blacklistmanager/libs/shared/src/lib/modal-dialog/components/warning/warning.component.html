@@ -1,0 +1,14 @@
+<div class="warning-dialog">
+  <div class="warning-body" [innerHtml]="data.body">
+  </div>
+  <div>
+    <hr>
+    <div class="buttons-wrapper">
+      <a (click)="closeModal()">{{(data.cancel_button | translate) || 'Cancel' }}</a>
+      <button class="btn btn-form" (click)="execCallback()">
+        {{data.ok_button || 'Ok' | translate}}
+      </button>
+    </div>
+  </div>
+</div>
+

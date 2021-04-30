@@ -1,0 +1,67 @@
+::ng-deep.ui-dialog-content {
+  padding: 0 !important;
+
+
+
+  .warning-dialog {
+    font-family: OpenSans-Light;
+    font-size: 14px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .warning-header {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      word-wrap: break-word;
+    }
+
+    .buttons-wrapper {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 17px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      button {
+        width: 123px;
+      }
+
+      .btn.btn-form{
+        margin-right: -5px;
+      }
+
+      a {
+        text-transform: capitalize;
+        color: white !important;
+        cursor: pointer;
+        line-height: 34px;
+        margin-left: 15px;
+
+        &:hover {
+          color: lightgrey !important;
+        }
+      }
+    }
+
+    .warning-body {
+      word-wrap: break-word;
+      padding: 6px;
+      margin-bottom: 12px;
+      white-space: pre-line;
+    }
+
+    .buttons-wrapper {
+      margin: 10px 0;
+    }
+
+    .wrapper-components {
+      height: 200px;
+    }
+  }
+
+}

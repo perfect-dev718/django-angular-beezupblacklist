@@ -1,0 +1,59 @@
+.ag-grid-default-header {
+  display: flex;
+
+  .sort-status {
+
+  }
+}
+
+.customHeaderMenuButton {
+  margin-top: 5px;
+  margin-left: 4px;
+  float: left;
+}
+
+.customHeaderLabel {
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+.customSortDownLabel {
+  &::before {
+    content: "\25B2";
+    margin-left: 3px;
+    margin-top: 0;
+    display: block;
+    font-size: 11px;
+    height: 9px;
+
+    &.active {
+      color: red;
+    }
+  }
+
+}
+
+.customSortUpLabel {
+  &::before {
+    content: "\25BC";
+    margin-left: 3.5px;
+    margin-top: 0;
+    font-size: 10px;
+    height: 9px;
+    display: block;
+    &.active {
+      color: red;
+    }
+  }
+}
+
+.customSortRemoveLabel {
+  float: left;
+  font-size: 11px;
+  margin-left: 3px;
+  margin-top: 6px;
+}
+
+.active {
+  color: cornflowerblue;
+}
